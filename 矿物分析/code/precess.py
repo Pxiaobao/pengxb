@@ -11,10 +11,12 @@ corr_matrix = model_data.corr()
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-
+# 设置图像大小
+plt.figure(figsize=(10, 8))
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Songti SC', 'STFangsong']
 plt.rcParams['axes.unicode_minus'] = False
 
 # 使用Seaborn绘制热力图
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', linewidths=.5)  # annot=True会显示数字在单元格内
-plt.show()
+#plt.show()
+plt.savefig('heatmap.png', dpi=300, bbox_inches='tight')

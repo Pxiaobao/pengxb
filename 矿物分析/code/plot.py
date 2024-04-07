@@ -1,27 +1,30 @@
-import pandas as pd
-import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import seaborn as sns
 
-# 假设df是你的DataFrame，包含时间序列数据
-# 创建一个示例DataFrame，包含100个数据点
-np.random.seed(0)  # 为了可重现性
-#读取模型数据.xlsx
-df = pd.read_excel('/Users/pengxb/Documents/project/python_ai/project/矿物分析/data/模型数据副本.xlsx',sheet_name='设备wob')
-df= df[df['材料2']]
+rock_character = pd.read_excel('../data/模型数据副本.xlsx',sheet_name = '材料')
+device_wob = pd.read_excel('../data/模型数据副本.xlsx',sheet_name = '设备wob')
+device_T = pd.read_excel('../data/模型数据副本.xlsx',sheet_name = '设备T')
 
-# 设置时间为索引
-df = df.set_index()
+rock_character = rock_character.drop(['序号', '岩性名称'], axis=1)
 
-# 绘制时域幅值变化图
-plt.figure(figsize=(10, 6))  # 图片大小
-plt.plot(df.index, df['材料A'], label='材料A', color='blue')  # 绘制线图
-plt.title('材料A的时域幅值变化')  # 图片标题
-plt.xlabel('时间')  # x轴标签
-plt.ylabel('幅值')  # y轴标签
-plt.legend()  # 显示图例
-plt.grid(True)  # 显示网格线
+# 设置图像大小
+plt.figure(figsize=(10, 8))
+plt.rcParams['font.sans-serif'] = ['SimHei', 'Songti SC', 'STFangsong']
+plt.rcParams['axes.unicode_minus'] = False
 
-# 格式化x轴日期显示
-plt.gcf().autofmt_xdate()
+joint_columns=['设备S', '设备Z', '静态抗压强度σc/MPa', '黏聚力',  '拉强比\n/%',
+       '动态强度/MPa', ' 滑动摩擦系数μ', '声级LAeq（dB）', '波速vp\n/m·s', '密度均值\n/g·cm-',
+       '渗透率mD\n5MPa', '孔隙度%\n5MPa']
 
+
+#kind表示联合分布图中非对角线图的类型，可选'reg'与'scatter'、'kde'、'hist'，
+#'reg'代表在图片中加入一条拟合直线，
+#'scatter'就是不加入这条直线,
+#'kde'是等高线的形式，'hist'就是类似于栅格地图的形式；
+#diag_kind表示联合分布图中对角线图的类型，可选'hist'与'kde'，'hist'代表直方图，'kde'代表直方图曲线化。
+# sns.set_theme(font_scale=1.2)
+sns.pairplot(rock_character[joint_columns],kind='reg',diag_kind='hist')
 plt.show()
