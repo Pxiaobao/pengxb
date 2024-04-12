@@ -62,7 +62,6 @@ for i, f_mid_token in tqdm(enumerate(tokens)):
 NUM_DIM = 50
 target_word_matrix = 0.1 * np.random.randn(VOCAB_SIZE, NUM_DIM)
 context_word_matrix = 0.1 * np.random.randn(VOCAB_SIZE, NUM_DIM)
-pdb.set_trace()
 #定义一个函数，用来更新初始化的词向量矩阵。在此之前我们先定义一个用来计算两个向量点积的Sigmoid函数值
 
 
@@ -84,7 +83,7 @@ def update(target_id, context_id, label, lr):
   return log_likelihood
 
 #训练模型利用上面定义的更新函数以及通过负取样获取的训练集，我们对词向量矩阵进行优化。这里让训练集迭代2次，学习率设为0.1
-EPOCH = 2
+EPOCH = 1000
 LR = 0.1
 
 for _ in range(EPOCH):
