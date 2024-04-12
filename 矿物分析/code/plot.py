@@ -19,25 +19,46 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy.stats import pearsonr
 
-joint_columns = ['设备S', '设备Z', '静态抗压强度']
+joint_columns = ['设备S', '设备Z', '静态抗压强度', '弹性模量', '泊松比', '抗拉强度', '黏聚力', '内摩擦角', '回弹均值',
+       '动态强度', '滑动摩擦系数', '声级', '波速', '密度均值', '渗透率', '孔隙度', '标定温度']
 # 计算相关系数矩阵
 correlation_matrix = rock_character[joint_columns].corr()
-# 绘制 pairplot
-g = sns.pairplot(rock_character[joint_columns], kind='reg', diag_kind='hist')
 
-# 这里由于pairplot本身不支持直接标注R^2，因此下面的代码仅作为演示如何获取R^2，而非直接标注在图上
-# 若要在图上标注，可能需要进一步自定义每个子图的内容
+#布局更紧凑一点，中间加入网格线
+g = sns.PairGrid(rock_character[joint_columns],layout_pad=0)
+g.map_lower(sns.regplot)  # 下三角
+g.map_diag(sns.histplot) # 对角线
+
 for i in range(len(joint_columns)):
     for j in range(i + 1, len(joint_columns)):
-       r = correlation_matrix.iloc[i, j]
-       col_x, col_y = joint_columns[i], joint_columns[j]
+        r = correlation_matrix.iloc[i, j]
+        col_x, col_y = joint_columns[i], joint_columns[j]
         
-       # 获取当前子图的ax对象
-       ax = g.axes[i][j]
-       #删除原子图
-       ax.clear()
-       # 这里只是简单地在右上角显示R^2，实际位置和样式可能需要调整
-       ax.text(0.5, 0.5, f'R = {r:.2f}', ha='right', va='top', transform=ax.transAxes, fontsize=16)
+        # 获取当前子图的ax对象
+        ax = g.axes[i][j]
+                #删除原子图
+        #ax.clear()
+        
+        # 
+        ax.text(0.7, 0.5, f'  R = {r:.2f}', ha='right', va='top', transform=ax.transAxes, fontsize=24)
+
+  # 上三角
+
+
+
+
+# # 若要在图上标注，可能需要进一步自定义每个子图的内容
+# for i in range(len(joint_columns)):
+#     for j in range(i + 1, len(joint_columns)):
+#        r = correlation_matrix.iloc[i, j]
+#        col_x, col_y = joint_columns[i], joint_columns[j]
+        
+#        # 获取当前子图的ax对象
+#        ax = g.axes[i][j]
+#        #删除原子图
+#        ax.clear()
+#        # 这里只是简单地在右上角显示R^2，实际位置和样式可能需要调整
+#        ax.text(0.5, 0.5, f'R = {r:.2f}', ha='right', va='top', transform=ax.transAxes, fontsize=16)
 
 
 plt.savefig('联合分布图20240408.svg',format='svg')
