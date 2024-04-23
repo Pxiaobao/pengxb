@@ -4,10 +4,6 @@ Decoder是一个由多个层组成的模块，每一层包含三个子层：[自
 
 ChatGPT作为一个对话模型，它的输入序列是由用户输入和历史对话组成的，它的输出序列是由模型生成的回复组成的。因为它没有Encoder部分，所以它不需要交叉注意力子层，只需要自注意力和[前馈神经网络子层](https://www.zhihu.com/search?q=%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%90%E5%B1%82&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3079118257%7D)。在自注意力子层中，它还使用了掩码（Mask）操作，来避免模型看到未来的信息。
 
-
-
-
-
 ### **seq2seq学习范式**
 
 ---
@@ -215,5 +211,3 @@ openai的blog提供了主要研究工作的概括性介绍，先浏览一遍，�
 2: https://mp.weixin.qq.com/s?__biz=MzI1MTI2OTkxMA==&mid=2247484031&idx=1&sn=3ef4a0fc6dc4dbc41392ee0e33194387&chksm=e9f4c406de834d10d1545ee8ad918c24a0a37bf27e2c44cc3a0b77999b516c75f0bfe2eb191b&token=1408500559&lang=zh_CN#rd
 
 3: https://openai.com/blog/chatgpt
-
-
