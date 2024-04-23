@@ -40,10 +40,48 @@ for i in range(len(joint_columns)):
         ax = g.axes[i][j]
                 #删除原子图
         #根据 r的值设置子图背景色，颜色越大越深
-        if r>0:
-            ax.set_facecolor((0.0, 0.2, 1.0, 0.5 + 0.5 * np.sin(np.pi * (2 * abs(r) - 1))      ))
+        if r>0.9:
+            ax.set_facecolor('#BE232E')
+        elif r>0.8:
+            ax.set_facecolor('#C53334')
+        elif r>0.7:
+            ax.set_facecolor('#DD5F4B')
+        elif r>0.6:
+            ax.set_facecolor('#EC8064')
+        elif r>0.5:
+            ax.set_facecolor('#F59F80')
+        elif r>0.4:
+            ax.set_facecolor('#F7AD90')
+        elif r>0.3:
+            ax.set_facecolor('#F6BEA4')
+        elif r>0.2:
+            ax.set_facecolor('#F2CBB7')
+        elif r>0.1:
+            ax.set_facecolor('#E5D8D0')
+        elif r>0:
+            ax.set_facecolor('#DBDCDE')
+        elif r> -0.1:
+            ax.set_facecolor('#D1DAE9')
+        elif r> -0.2:
+            ax.set_facecolor('#C5D6F2')
+        elif r> -0.3:
+            ax.set_facecolor('#AAC7FD')
+        elif r> -0.4:
+            ax.set_facecolor('#96B7FF')
+        elif r> -0.5:
+            ax.set_facecolor('#88ABFD')
+        elif r> -0.6:
+            ax.set_facecolor('#7A9DF8')
+        elif r> -0.7:
+            ax.set_facecolor('#6B8DF0')
+        elif r> -0.8:
+            ax.set_facecolor('#5774E0')
+        elif r> -0.9:
+            ax.set_facecolor('#4A62D3')
+        elif r> -1.0:
+            ax.set_facecolor('#3D50C4')
         else:
-            ax.set_facecolor((0.8, 0.0, 0.0, 0.5 + 0.5 * np.sin(np.pi * (2 * abs(r) - 1))  ))
+            ax.set_facecolor('#3D50C4')
         #ax.set_facecolor('lightgrey')
         # 
         ax.text(0.7, 0.5, f'  R = {r:.2f}', ha='right', va='top', transform=ax.transAxes, fontsize=24)
@@ -64,10 +102,10 @@ for i in range(len(joint_columns)):
 #        #删除原子图
 #        ax.clear()
 #        # 这里只是简单地在右上角显示R^2，实际位置和样式可能需要调整
-#        ax.text(0.5, 0.5, f'R = {r:.2f}', ha='right', va='top', transform=ax.transAxes, fontsize=16)
+#        ax.text(abs(r), abs(r), f'R = {r:.2f}', ha='right', va='top', transform=ax.transAxes, fontsize=16)
 
 
-plt.savefig('联合分布图20240421.svg',format='svg')
+plt.savefig('联合分布图20240423.svg',format='svg')
 plt.show()
 
 
