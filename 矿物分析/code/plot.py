@@ -87,10 +87,6 @@ for i in range(len(joint_columns)):
         ax.text(0.7, 0.5, f'  R = {r:.2f}', ha='right', va='top', transform=ax.transAxes, fontsize=24)
 
   # 上三角
-
-
-
-
 # # 若要在图上标注，可能需要进一步自定义每个子图的内容
 # for i in range(len(joint_columns)):
 #     for j in range(i + 1, len(joint_columns)):
@@ -110,7 +106,7 @@ plt.show()
 
 
 #plt.clf()
-""" joint_columns = ['设备S', '设备Z', '静态抗压强度', '弹性模量', '泊松比', '抗拉强度', '黏聚力', '内摩擦角', '回弹均值',
+"""joint_columns = ['设备S', '设备Z', '静态抗压强度', '弹性模量', '泊松比', '抗拉强度', '黏聚力', '内摩擦角', '回弹均值',
        '动态强度', '滑动摩擦系数', '声级', '波速', '密度均值', '渗透率', '孔隙度', '标定温度']
 #joint_columns = ['设备S', '设备Z', '静态抗压强度', '弹性模量', '泊松比']
 #sns.set_theme(font_scale=2)
