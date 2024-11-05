@@ -1,0 +1,156 @@
+{
+  "main": {
+    "id": "57f3a5f6600bcaaa",
+    "type": "split",
+    "children": [
+      {
+        "id": "5ba36e0f293b83b9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2dbe5070eb1f85c2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "自然语言处理/基础知识/2.Transformer 模型.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7983dd08b3bd6baf",
+    "type": "split",
+    "children": [
+      {
+        "id": "d4837c4cfbfe7202",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "428b697856ecefd8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "43c8d64d5932ea0d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "d84da507f83f8ff2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "deedf347aab18069",
+    "type": "split",
+    "children": [
+      {
+        "id": "8c646b2a4bae079e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "23ce38f17d54f64f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "自然语言处理/基础知识/2.Transformer 模型.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "561cfc93bd24858e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "自然语言处理/基础知识/2.Transformer 模型.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c920210732a07c9e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1345527ab0778a86",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "自然语言处理/基础知识/2.Transformer 模型.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "2dbe5070eb1f85c2",
+  "lastOpenFiles": [
+    "笔记/python与人工智能/python基础/刷题笔记/数组.md",
+    "笔记/python与人工智能/python基础/刷题笔记.md",
+    "笔记/python与人工智能/python基础/3.python高级数据类型.md",
+    "笔记/python与人工智能/python基础/2.python判断与循环控制.md"
+  ]
+}
